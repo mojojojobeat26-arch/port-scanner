@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "port-scanner"
+version = "1.0.0"
+description = "Fast async TCP port scanner with banner grabbing and JSON output"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [{name = "Faraz Mustafa Seyed"}]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0,<8.0", "pytest-asyncio>=0.21,<1.0"]
+
+[project.scripts]
+port-scanner = "port_scanner.main:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
